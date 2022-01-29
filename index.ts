@@ -22,5 +22,6 @@ var payment: [number, string, number] = [0, 'ダブル型', 8];
 // var payment: [number, string, number] = [0, 'ダブル型', 8, 'テスト'];
 
 // オブジェクト型(キー・バリューが)
-var object:{}
+var object: {};
 
+// test
