@@ -51,3 +51,50 @@ function sumCat(...values: number[]): number {
 
 // オブジェクトの場合エラーとなる
 // function sumObj(...values: object): number {} // must be arrayの警告が出る
+
+// ==============================================================
+
+/**
+ * アロー関数
+ */
+// 通常の関数よりシンプルに記載できる
+// 厳密にはアロー関数と普通の関数は異なる
+// () => { 処理 }
+
+/** 基本系。使用方法は普通の関数と変わらない */
+let add = (x1: number, x2: number): number => {
+  return x1 + x2;
+};
+// console.log(add(1, 3)); // 4
+
+/** returnは処理が一文になる場合、省略可能 */
+// 長い時は普通に省略せずにした方が良い
+// returnと{}なし
+let hello = (name: string): string => `Hello!${name}`;
+
+/** データ型は省略できる */
+let hello2 = (name2) => `Hello!${name2}`;
+
+/** 引数が一つもない時は()を省略できない */
+// let getValue = (): number => {
+//   return document
+//     .getElementById('app')
+//     .getElementsByTagName('div')
+//     .firstChild.getAttribute('value')
+//     .toFixed(2);
+// };
+
+/** thisの扱いが普通の関数とアロー関数で異なる */
+// 使い道
+// thisの使い方を意識しない(おすすめ): アロー関数
+// 定義前の関数を呼び出ししたい： function関数
+
+// // 普通用の関数のthis:このイベントで使用されている要素を参照する
+// document.getElementById('button1').addEventListener('click', function () {
+//   console.log(this); // <button></button>;
+// });
+
+// // アロー関数のthis:関数が定義された場所をthisとする
+// document.getElementById('button1').addEventListener('click', () => {
+//   console.log(this); // Windowオブジェクト
+// });
